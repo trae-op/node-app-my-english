@@ -1,0 +1,38 @@
+{
+  "connection": {
+    "port": 8000,
+    "host": "0.0.0.0",
+    "db": "mongodb://localhost/english",
+    "db_production": "mongodb://english:darkmanx1988@ds161751.mlab.com:61751/my_english"
+  },
+  "jwt_private_key": "myenglish",
+  "messages": {
+    "deleted": "Successfully deleted!",
+    "api_page": {
+      "title": "API Documentation for \"App My English\""
+    },
+    "after_connected": "Mongoose connected to \"myenglish\" connection!",
+    "password": "Incorrect password!!!",
+    "failed_loading_plugin": "----> Failed loading plugin!!! <----",
+    "translations": {
+      "errors": {
+        "list": "Error when return the translations list!",
+        "get_by_id": "Error when return the translation by ID!",
+        "delete_by_id": "Error when removing the translation by ID!",
+        "add": "Error when add a new translation!",
+        "update": "Error when update of translation!"
+      }
+    },
+    "users": {
+      "errors": {
+        "list": "Error when return the USERS list!",
+        "get_by_id": "Error when return the USER by ID!",
+        "delete_by_id": "Error when removing the USER by ID!",
+        "add": "Error when add a new USER!",
+        "find_by_email": "Error when finding the USER by email!",
+        "not_exit_email": "That's an email is not exist!",
+        "generating_of_password": "Error when generating of password!"
+      }
+    }
+  }
+}
