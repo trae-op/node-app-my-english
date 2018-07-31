@@ -14,7 +14,7 @@ const privateKey = config.get('jwt_private_key');
 
 const init = async () => {
   const server = new Hapi.Server({
-    port: config.get('connection.port'),
+    port: process.env.PORT || config.get('connection.port'),
     host: config.get('connection.host'),
     routes: { cors: true }
   });
