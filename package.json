@@ -16,6 +16,7 @@
     "config": "^1.30.0",
     "hapi": "^17.5.2",
     "hapi-auth-jwt2": "^8.1.0",
+    "inert": "^5.1.0",
     "lodash": "^4.17.10",
     "mongoose": "^5.2.4",
     "mongoose-merge-plugin": "0.0.5",

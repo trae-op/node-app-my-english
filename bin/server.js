@@ -4,6 +4,7 @@
 const Hapi = require('hapi');
 const config = require('config');
 const _ = require('lodash');
+const Inert = require('inert');
 
 const users = require('../handlers/users');
 
@@ -18,6 +19,8 @@ const init = async () => {
     host: config.get('connection.host'),
     routes: { cors: true }
   });
+
+  await server.register(Inert);
 
   // include our module here ↓↓
   await server.register(require('hapi-auth-jwt2'));
@@ -35,6 +38,19 @@ const init = async () => {
   );
 
   server.route(allRoutes);
+
+  server.route({
+    method: 'GET',
+    path: '/{param*}',
+    config: {
+      auth: false
+    },
+    handler: {
+      directory : {
+        path : 'public'
+      }
+    }
+  });
 
   await server.start();
   return server;
