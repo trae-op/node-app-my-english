@@ -64,6 +64,14 @@ class Translations {
     let newData = new this.model(body);
     return new Promise( (resolve, reject) => {
       newData.created_at = main.currentTime();
+
+      let { titleEn, titleRus, descriptionEn, descriptionRus } = newData;
+
+      if (!main.fieldsValidTranslations({titleEn, titleRus, descriptionEn, descriptionRus})) {
+        reject(Boom.badRequest(config.get('messages.fields_valid_translations')));
+        return;
+      }
+
       newData.save( (err, doc) => {
         if (err) {
           reject(Boom.badRequest(config.get('messages.translations.errors.add')));
@@ -85,6 +93,13 @@ class Translations {
           docFind.descriptionRus = body.descriptionRus;
           docFind.creator_email = body.creator_email;
           docFind.created_at = main.currentTime();
+
+          let { titleEn, titleRus, descriptionEn, descriptionRus } = docFind;
+
+          if (!main.fieldsValidTranslations({titleEn, titleRus, descriptionEn, descriptionRus})) {
+            reject(Boom.badRequest(config.get('messages.fields_valid_translations')));
+            return;
+          }
 
           docFind.save( (err, docUpdate) => {
             if (err) {

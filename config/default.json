@@ -8,6 +8,8 @@
   "jwt_private_key": "myenglish",
   "messages": {
     "deleted": "Successfully deleted!",
+    "fields_valid_translations": "The field is empty or symbols number are less 3!",
+    "fields_valid_register": "Some fields are incorrect!",
     "api_page": {
       "title": "API Documentation for \"App My English\""
     },

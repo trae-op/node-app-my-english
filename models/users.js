@@ -17,6 +17,7 @@ class Users {
         name: String,
         email: String,
         password: String,
+        confirm_password: String,
         created_at: String,
         role: String
       });
@@ -90,6 +91,12 @@ class Users {
         .catch(() => {
           newData.role = main.checkRole(newData);
           newData.created_at = main.currentTime();
+
+          if (!main.fieldsValidRegister(newData)) {
+            reject(Boom.badRequest(config.get('messages.fields_valid_register')));
+            return;
+          }
+
           Bcrypt.genSalt(10,(err, salt) => {
             if (err) {
               reject(Boom.badRequest(config.get('messages.users.errors.generating_of_password')));

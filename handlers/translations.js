@@ -3,7 +3,6 @@
 
 const mongoose = require('mongoose');
 const config = require('config');
-const renderJSON = require('../lib/renderJson');
 const Translations = require('../models/translations');
 const mongoConnection = require('../lib/mongoConnections');
 const translations = new Translations(mongoose, mongoConnection.getConnectionApp());

@@ -20,7 +20,8 @@
     "lodash": "^4.17.10",
     "mongoose": "^5.2.4",
     "mongoose-merge-plugin": "0.0.5",
-    "node-datetime": "^2.0.6"
+    "node-datetime": "^2.0.6",
+    "validator": "^10.6.0"
   },
   "devDependencies": {
     "mongoose-migration": "^0.2.0"
